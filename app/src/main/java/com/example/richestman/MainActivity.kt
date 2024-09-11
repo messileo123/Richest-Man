@@ -26,21 +26,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.ManRv.layoutManager= LinearLayoutManager(this)
-        Man.add((Man("steav jobs",60,5.01,R.drawable.ab,"steav")))
-        Man.add((Man("steav jobs",60,5.01,R.drawable.aa,"steav")))
-
-        Man.add((Man("steav jobs",60,5.01,R.drawable.ac,"steav")))
-        Man.add((Man("steav jobs",60,5.01,R.drawable.ad,"steav")))
-        Man.add((Man("steav jobs",60,5.01,R.drawable.ag,"steav")))
-        Man.add((Man("steav jobs",60,5.01,R.drawable.ae,"steav")))
+        Man.add(Man("steav jobs",60,5.01,R.drawable.ab,"steav"))
+        Man.add(Man("steav jobs",60,5.01,R.drawable.aa,"steav"))
+        Man.add(Man("steav jobs",60,5.01,R.drawable.ac,"steav"))
+        Man.add(Man("steav jobs",60,5.01,R.drawable.ad,"steav"))
+        Man.add(Man("steav jobs",60,5.01,R.drawable.ag,"steav"))
+        Man.add(Man("steav jobs",60,5.01,R.drawable.ae,"steav"))
 
         manAdapter= ManAdapter(Man)
         binding.ManRv.adapter=manAdapter
         manAdapter.onclick={
             val intent=Intent(this,DetailsActivity::class.java)
             intent.putExtra("name",it.manName)
-            intent.putExtra("age",it.manage)
-            intent.putExtra("networth",it.networht)
+            intent.putExtra("age",it.manage.toString())
+            intent.putExtra("networth",it.networht.toString())
             intent.putExtra("img",it.manImg)
             intent.putExtra("desc",it.manDesc)
             startActivity(intent)
@@ -73,12 +72,9 @@ class MainActivity : AppCompatActivity() {
     private fun showManAddDialog() {
         val dialogView = LayoutInflater.from(this).inflate(R.layout.add_item, null)
         val ManNameEt = dialogView.findViewById<EditText>(R.id.ManNameEt)
-        val MAnAgeEt =
-            dialogView.findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.ageEt)
-        val NetworhtEt =
-            dialogView.findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.ManEt)
-        val MAnDesc =
-            dialogView.findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.ManDescEt)
+        val MAnAgeEt = dialogView.findViewById<EditText>(R.id.ageEt)
+        val NetworhtEt =dialogView.findViewById<EditText>(R.id.ManEt)
+        val MAnDesc = dialogView.findViewById<EditText>(R.id.ManDescEt)
         AlertDialog.Builder(this)
             .setTitle("Add Man")
             .setView(dialogView)

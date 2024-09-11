@@ -29,9 +29,9 @@ class ManAdapter(private val manList: ArrayList<Man>): RecyclerView.Adapter<ManA
 
     override fun onBindViewHolder(holder: ManViewHolder, position: Int) {
         holder.binding.apply {
-            ManName.text = manList[position].toString()
-            MAnAge.text = "age : 60"[position].toString()
-            Networht.text = "networht: 5B$"[position].toString()
+            ManName.text = manList[position].manName
+            MAnAge.text = "age : 60"+ manList[position].manage.toString()
+            Networht.text = "networht: 5B$" + manList[position].networht
             MAnImg.setImageResource(manList[position].manImg)
 
         }

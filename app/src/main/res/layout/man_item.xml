@@ -54,7 +54,7 @@
             android:id="@+id/Networht"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="networht: 5B$"
+            android:text="networht:5B$"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/MAnImg"
